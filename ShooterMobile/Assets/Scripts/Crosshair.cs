@@ -21,9 +21,16 @@ public class Crosshair : MonoBehaviour
         transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
     }
 
-    public void detectTarget(Ray ray, float rayDistance) {
+    public bool detectTarget(Ray ray, float rayDistance) {
         if (Physics.Raycast(ray, rayDistance, targetLayerMask))
-            dotSpriteRenderer.color = dotColor;        
-        else dotSpriteRenderer.color = originalColor;
+        {
+            dotSpriteRenderer.color = dotColor;
+            return true;
+        }
+        else 
+        {
+            dotSpriteRenderer.color = originalColor;
+            return false;
+        }           
     }
 }
