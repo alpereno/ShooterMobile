@@ -32,7 +32,6 @@ public class Player : LivingEntity
     {
         moveInput();
         weaponInput();
-        createAimRay();
         checkPlayerYPos();
     }
 
@@ -47,6 +46,11 @@ public class Player : LivingEntity
         if (Input.GetKeyDown(KeyCode.R))
         {
             gunController.reload();
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            createAimRay();
         }
     }
 

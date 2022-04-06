@@ -51,17 +51,14 @@ MonoBehaviour:
     type: 3}
   chamber: {fileID: 6772645411650567034}
   shell: {fileID: 2621019643789423976, guid: 8a45498e3e4169448a283d9d9169a4f4, type: 3}
-  msBetweenShots: 200
+  msBetweenShots: 220
   muzzleVelocity: 30
   bulletsPerMagazine: 7
   reloadTime: 0.8
   gunRecoilMinMax: {x: 0.05, y: 0.25}
-  gunRecoilAngleMinMax: {x: 4, y: 12}
   recoilMoveTime: 0.1
-  recoilRotationTime: 0.1
   shootAudioClip: {fileID: 8300000, guid: 98b6d77e81d109a4b98cb8edd8311a21, type: 3}
   reloadAudioClip: {fileID: 8300000, guid: 7bcb87208891a5e4f9cfe38efce9a3e3, type: 3}
-  shotAudioVolumePercent: 0.3
 --- !u!1 &2024030586882819325
 GameObject:
   m_ObjectHideFlags: 0

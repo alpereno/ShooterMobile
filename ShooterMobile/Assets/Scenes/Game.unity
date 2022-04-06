@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 9274e3de89ae42049bdce25633af6322,
+  m_LightingDataAsset: {fileID: 112000000, guid: 74898bea063466f4d8779a938689394a,
     type: 2}
   m_LightingSettings: {fileID: 1979606225}
 --- !u!196 &4
@@ -123,7 +123,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 491114258766f8f409aa75a5f4496063, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8589e6d2dd33223499f481b06cce8457, type: 2}
 --- !u!1 &95573095
 GameObject:
   m_ObjectHideFlags: 0
