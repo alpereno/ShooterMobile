@@ -22,7 +22,7 @@ public class Enemy : LivingEntity
     Color attackColor = Color.red;
 
     float damage = 1;
-    float attackDistanceThreshold = .5f;
+    float attackDistanceThreshold = 1f;
     float timeBetweenAttacks = 1;
     float nextAttackTime;
     float collisionRadius;
