@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] private Transform muzzle;
-    [SerializeField] private Projectile projectile;
-    [SerializeField] private Transform chamber;             //shell ejection point
-    [SerializeField] private Transform shell;
+    [SerializeField] private Transform muzzle;              // ObjectPooler implemented. 
+    //[SerializeField] private Projectile projectile;       // So we dont need projectile here anymore. (it's in objectPooler)
+    [SerializeField] private Transform chamber;             // shell ejection point
+    //[SerializeField] private Transform shell;             // we dont need shell prefab too 
 
     [Header("Gun Properties")]
     [SerializeField] private float msBetweenShots = 100;
@@ -28,10 +28,12 @@ public class Gun : MonoBehaviour
     Vector3 recoilSmoothDampVelocity;
     float recoilAngleSmoothDampVelocity;
     float recoilAngle;
+    ObjectPooler objectPooler;
 
     private void Start()
     {
         bulletsRemainingInMagazine = bulletsPerMagazine;
+        objectPooler = ObjectPooler.instance;
     }
 
     private void LateUpdate()
@@ -53,11 +55,13 @@ public class Gun : MonoBehaviour
         if (!reloading && bulletsRemainingInMagazine  > 0 && Time.time > nextShotTime)
         {
             nextShotTime = Time.time + msBetweenShots / 1000;
-            Projectile newProjectile = Instantiate(projectile, muzzle.position, muzzle.rotation) as Projectile;
+            //Projectile newProjectile = Instantiate(projectile, muzzle.position, muzzle.rotation) as Projectile;
+            Projectile newProjectile = objectPooler.spawnFromPool("Projectile", muzzle.position, muzzle.rotation).GetComponent<Projectile>();
             newProjectile.setBulletSpeed(muzzleVelocity);
             bulletsRemainingInMagazine--;
 
-            Instantiate(shell, chamber.position, chamber.rotation);
+            //Instantiate(shell, chamber.position, chamber.rotation);
+            objectPooler.spawnFromPool("Shell", chamber.position, chamber.rotation);
 
             transform.localPosition -= Vector3.forward * Random.Range(gunRecoilMinMax.x, gunRecoilMinMax.y);
 

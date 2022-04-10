@@ -1,12 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, IPooledObject
 {
     [SerializeField] private LayerMask collisionMask;
     [SerializeField] private float bulletSpeed = 10f;
     [SerializeField] private Color trailColor;
-    float lifeTime = 3;
+
+    TrailRenderer trail;
+    float trailTime;
+    //float lifeTime = 3;
     float damage = 1;
     //if bullet and enemy move in one frame when near the intersection raycast won't detect enemy cause ray is so small (movedistance) one frame
     //so I've increased the length of ray by a small number. if enemy movement speed will increase, increase it too
@@ -16,14 +19,20 @@ public class Projectile : MonoBehaviour
         bulletSpeed = newBulletSpeed;
     }
 
+    void Awake()
+    {
+        trail = GetComponent<TrailRenderer>();
+        trailTime = trail.time;
+    }
+
     //set bullet damage(headshoot, body, leg etc.)? maybe weapon variation...
     //idk if it's the right place...
     //you can do research...
 
-    private void Start()
+    // it was Start method before implemented object pool
+    public void onObjectSpawn()
     {
-        Destroy(gameObject, lifeTime);
-
+        //Destroy(gameObject, lifeTime);
         //RETURNS : Collider[] Returns an array with all colliders touching or inside the sphere.
         //DESCRIPTION : Computes and stores colliders touching or inside the sphere. ----> Physics.OverlapSphere
         //if enemy so so close to enemy, this func. will work. Projectile will instantiate in enemy's collider if "initialCollisions" is not null
@@ -33,7 +42,10 @@ public class Projectile : MonoBehaviour
             //actually hit point is current pos. this projectile
             onHitEnemy(initialCollisions[0], transform.position);
         }
-        GetComponent<TrailRenderer>().material.SetColor("_TintColor", trailColor);
+
+        trail.material.SetColor("_TintColor", trailColor);
+        trail.time = -1;
+        Invoke("resetTrail", .05f);
     }
 
     void Update()
@@ -76,6 +88,12 @@ public class Projectile : MonoBehaviour
         {
             damageableObject.takeHit(damage, hitPoint, transform.forward);
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
+    }
+
+    void resetTrail()
+    {
+        trail.time = trailTime;
     }
 }
