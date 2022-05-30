@@ -1,0 +1,18 @@
+Base path: 'D:/Program Files/Unity/2020.3.26f1/Editor/Data', plugins path 'D:/Program Files/Unity/2020.3.26f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+
+Cmd: compileComputeKernel
+  insize=5009 file=D:/Projects/Unity Projects/ShooterMobile/Library/PackageCache/com.unity.postprocessing@3.2.1/PostProcessing/Shaders/Builtins/Lut3DBaker.compute kernel=KGenLut3D_CustomTonemap cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=5 km=<TONEMAPPING_CUSTOM=1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=5412
+
+Cmd: compileComputeKernel
+  insize=3444 file=D:/Projects/Unity Projects/ShooterMobile/Library/PackageCache/com.unity.postprocessing@3.2.1/PostProcessing/Shaders/Builtins/MultiScaleVODownsample1.compute kernel=MultiScaleVODownsample1 cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=5 km=<main=MultiScaleVODownsample1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=2521
+
+Cmd: compileComputeKernel
+  insize=1224 file=D:/Projects/Unity Projects/ShooterMobile/Library/PackageCache/com.unity.postprocessing@3.2.1/PostProcessing/Shaders/Builtins/Texture3DLerp.compute kernel=KTexture3DLerpToColor cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=5 km=<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=772
+
+Cmd: compileComputeKernel
+  insize=18315 file=D:/Projects/Unity Projects/ShooterMobile/Library/PackageCache/com.unity.postprocessing@3.2.1/PostProcessing/Shaders/Builtins/MultiScaleVOUpsample.compute kernel=MultiScaleVOUpSample_MSAA cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=5 km=<MAIN=MultiScaleVOUpSample_MSAA>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=8523
+
+Cmd: compileComputeKernel
+  insize=18315 file=D:/Projects/Unity Projects/ShooterMobile/Library/PackageCache/com.unity.postprocessing@3.2.1/PostProcessing/Shaders/Builtins/MultiScaleVOUpsample.compute kernel=MultiScaleVOUpSample_invert cachingPP=1 ppOnly=0 stripLineD=0 buildPlatform=5 km=<MAIN=MultiScaleVOUpSample_invert>,<INVERT=1>,<UNITY_VERSION=202039> pKW=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR uKW=SHADER_STAGE_COMPUTE platform=d3d11 flags=0 ok=1 outsize=8653
+
