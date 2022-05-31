@@ -51,6 +51,8 @@ public class GunController : MonoBehaviour
         }
     }
 
+
+    // OBSOLETE: when existing crosshair instead of laser line this func is aiming gun to crosshair point
     public void aim(Vector3 aimPoint) {
         if (equippedGun != null)
         {
