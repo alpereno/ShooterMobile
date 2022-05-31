@@ -49,11 +49,7 @@ public class Player : LivingEntity
             gunController.reload();
         }
 
-        //if (Input.GetMouseButton(0))
-        //{
-          //  print("a");
-            createAimRay();
-        //}
+        createAimRay();
     }
 
     private void createAimRay()
@@ -100,14 +96,11 @@ public class Player : LivingEntity
                                             transform.position.z + transform.forward.z * 2.75f);
         gunController.aim(crosshairPoint);
         crosshair.transform.position = crosshairPoint;
-        Color tempColor = Color.green;
         if (Physics.Raycast(ray, out hit, distance, enemyMask, QueryTriggerInteraction.Collide))
         {
             gunController.shoot();
-            tempColor = Color.red;
         }
-        else tempColor = Color.green;
-        Debug.DrawLine(gunController.getWeaponHoldPos, gunController.getWeaponHoldPos + gunController.transform.forward * 5, tempColor);
+        //Debug.DrawLine(gunController.getWeaponHoldPos, gunController.getWeaponHoldPos + gunController.transform.forward * 5, tempColor);
         //Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
         //Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
         //float distance;

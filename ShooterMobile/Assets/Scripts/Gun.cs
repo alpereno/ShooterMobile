@@ -21,6 +21,8 @@ public class Gun : MonoBehaviour
     //[SerializeField] private float recoilRotationTime = .1f;
     [SerializeField] private AudioClip shootAudioClip;
     [SerializeField] private AudioClip reloadAudioClip;
+    [SerializeField] private LineRenderer laserLine;
+    [SerializeField] private LayerMask enemyMask;
     float nextShotTime;
     [HideInInspector]
     public int bulletsRemainingInMagazine { get; private set; }
@@ -34,6 +36,25 @@ public class Gun : MonoBehaviour
     {
         bulletsRemainingInMagazine = bulletsPerMagazine;
         objectPooler = ObjectPooler.instance;
+        laserLine = GetComponent<LineRenderer>();
+    }
+
+    private void Update()
+    {
+        laserLine.SetPosition(0, muzzle.position);
+
+        RaycastHit hit;
+        if (Physics.Linecast(muzzle.position, muzzle.position + muzzle.forward * 10, out hit, enemyMask))
+        {
+            laserLine.SetPosition(1, hit.point);
+            laserLine.startColor = Color.red;
+        }
+        else
+        {
+            laserLine.SetPosition(1, muzzle.position + muzzle.forward * 10);
+            laserLine.startColor = Color.green;
+        }
+        //Debug.DrawLine(muzzle.position, muzzle.position + muzzle.forward * 10, Color.red);
     }
 
     private void LateUpdate()
