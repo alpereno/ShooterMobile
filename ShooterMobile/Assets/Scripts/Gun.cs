@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private AudioClip reloadAudioClip;
     [SerializeField] private LineRenderer laserLine;
     [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private float laserRange = 10f;
 
     float nextShotTime;
     [HideInInspector]
@@ -43,19 +44,17 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         laserLine.SetPosition(0, muzzle.position);
-
         RaycastHit hit;
-        if (Physics.Linecast(muzzle.position, muzzle.position + muzzle.forward * 10, out hit, enemyMask))
+        if (Physics.Linecast(muzzle.position, muzzle.position + muzzle.forward * laserRange, out hit, enemyMask))
         {
             laserLine.SetPosition(1, hit.point);
             laserLine.startColor = Color.red;
         }
         else
         {
-            laserLine.SetPosition(1, muzzle.position + muzzle.forward * 10);
+            laserLine.SetPosition(1, muzzle.position + muzzle.forward * laserRange);
             laserLine.startColor = Color.green;
         }
-        //Debug.DrawLine(muzzle.position, muzzle.position + muzzle.forward * 10, Color.red);
     }
 
     private void LateUpdate()

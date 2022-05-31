@@ -30,17 +30,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: eb5c905b0267cd142b41f0db78f09504,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.1301
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eb5c905b0267cd142b41f0db78f09504,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 0.050000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eb5c905b0267cd142b41f0db78f09504,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: 19.398
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eb5c905b0267cd142b41f0db78f09504,
         type: 3}
@@ -144,13 +144,13 @@ TrailRenderer:
   m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.428307
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.09375
+        value: 0.26799998
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -159,7 +159,7 @@ TrailRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.015625
+        value: 0.039627075
         inSlope: 0
         outSlope: 0
         tangentMode: 0
