@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private AudioClip reloadAudioClip;
     [SerializeField] private LineRenderer laserLine;
     [SerializeField] private LayerMask enemyMask;
+
     float nextShotTime;
     [HideInInspector]
     public int bulletsRemainingInMagazine { get; private set; }
