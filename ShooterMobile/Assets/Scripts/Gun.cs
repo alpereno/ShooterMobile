@@ -109,6 +109,7 @@ public class Gun : MonoBehaviour
 
     IEnumerator animateReload(){
         reloading = true;
+        laserLine.enabled = false;
         yield return new WaitForSeconds(.5f);
 
         float reloadSpeed = 1f / reloadTime;
@@ -128,6 +129,7 @@ public class Gun : MonoBehaviour
         }
 
         bulletsRemainingInMagazine = bulletsPerMagazine;
+        laserLine.enabled = true;
         reloading = false;
     }
 }
