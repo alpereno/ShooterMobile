@@ -46,10 +46,10 @@ public class GameUI : MonoBehaviour
     {
         player.onDeath += onGameOver;
         screenHeight = Screen.height;
-        print(screenHeight);
+        //print(screenHeight);
         //bannerBotPos = screenHeight - (screenHeight * 5 / 3);
         bannerBotPos = -(2 * screenHeight / 5);
-        print("bot pos" + bannerBotPos);
+        //print("bot pos" + bannerBotPos);
         bannerTopPos = screenHeight / 3;
     }
 

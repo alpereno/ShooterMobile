@@ -21,6 +21,7 @@ public class Gun : MonoBehaviour
     //[SerializeField] private float recoilRotationTime = .1f;
     [SerializeField] private AudioClip shootAudioClip;
     [SerializeField] private AudioClip reloadAudioClip;
+    [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private LineRenderer laserLine;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private float laserRange = 10f;
@@ -76,6 +77,8 @@ public class Gun : MonoBehaviour
         if (!reloading && bulletsRemainingInMagazine  > 0 && Time.time > nextShotTime)
         {
             nextShotTime = Time.time + msBetweenShots / 1000;
+            muzzleFlash.Play();
+
             //Projectile newProjectile = Instantiate(projectile, muzzle.position, muzzle.rotation) as Projectile;
             Projectile newProjectile = objectPooler.spawnFromPool("Projectile", muzzle.position, muzzle.rotation).GetComponent<Projectile>();
             newProjectile.setBulletSpeed(muzzleVelocity);
@@ -89,6 +92,8 @@ public class Gun : MonoBehaviour
             //recoilAngle += Random.Range(gunRecoilAngleMinMax.x, gunRecoilAngleMinMax.y);
             //recoilAngle = Mathf.Clamp(recoilAngle, 0, 35);
             AudioManager.instance.playAudio(shootAudioClip, transform.position, .25f);
+
+
         }
     }
 
