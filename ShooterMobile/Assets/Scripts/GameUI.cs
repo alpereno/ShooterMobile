@@ -30,6 +30,9 @@ public class GameUI : MonoBehaviour
     Spawner spawner;
     Player player;
     GunController gunController;
+    float screenHeight;
+    float bannerTopPos;
+    float bannerBotPos;
 
     private void Awake()
     {
@@ -42,6 +45,12 @@ public class GameUI : MonoBehaviour
     private void Start()
     {
         player.onDeath += onGameOver;
+        screenHeight = Screen.height;
+        print(screenHeight);
+        //bannerBotPos = screenHeight - (screenHeight * 5 / 3);
+        bannerBotPos = -(2 * screenHeight / 5);
+        print("bot pos" + bannerBotPos);
+        bannerTopPos = screenHeight / 3;
     }
 
     private void Update()
@@ -123,7 +132,7 @@ public class GameUI : MonoBehaviour
                     direction = 1;
                 }
             }
-            newWaveBanner.anchoredPosition = Vector2.up *Mathf.Lerp(400, 190, animatePercent);
+            newWaveBanner.anchoredPosition = Vector2.up * Mathf.Lerp(bannerTopPos, bannerBotPos, animatePercent);
             yield return null;
         }
     }
