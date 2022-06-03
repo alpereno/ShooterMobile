@@ -942,7 +942,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 8a547f721d8cb2a9d05f4a3b8e3557d7
+      Hash: 2fe9a6cf302e8946c8a03e566a0d9fdc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -1736,4 +1736,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/Game.unity
-  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/rs/AlpShooter.apk"
+  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/rs/V1.4AlpShooter.apk"

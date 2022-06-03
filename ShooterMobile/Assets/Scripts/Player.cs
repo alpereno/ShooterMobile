@@ -13,8 +13,7 @@ public class Player : LivingEntity
     [SerializeField] private Animator anim;
     [SerializeField] private Joystick joystick;
     [SerializeField] private Joystick Rotatejoystick;
-    [SerializeField] private LayerMask enemyMask;
-    Camera viewCamera;
+    //Camera viewCamera;
 
     private void Awake()
     {
@@ -26,13 +25,13 @@ public class Player : LivingEntity
         base.Start();
         playerController = GetComponent<PlayerController>();
         gunController = GetComponent<GunController>();
-        viewCamera = Camera.main;
+        //viewCamera = Camera.main;
     }
 
     void Update()
     {
         moveInput();
-        weaponInput();
+        //weaponInput();
         checkPlayerYPos();
     }
 
@@ -44,10 +43,10 @@ public class Player : LivingEntity
 
     private void weaponInput()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            gunController.reload();
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    gunController.reload();
+        //}
         createAimRay();
     }
 
@@ -86,20 +85,6 @@ public class Player : LivingEntity
         //}
         //if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         //{}
-
-        // This Raycast is just managing the shooting
-        // Shoots automatically if there is an enemy in front of the player within a certain distance
-
-        // It's NOT firing func. just calling shoot func.
-
-        Ray ray = new Ray(gunController.getWeaponHoldPos, gunController.getWeaponForward);
-        RaycastHit hit;
-        float distance = 11f;
-        if (Physics.Raycast(ray, out hit, distance, enemyMask, QueryTriggerInteraction.Collide))
-        {            
-            gunController.shoot();
-        }
-        //Debug.DrawLine(gunController.getWeaponHoldPos, gunController.getWeaponHoldPos + gunController.getWeaponForward * 11, Color.magenta);
     }
 
     private void moveInput()
