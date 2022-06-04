@@ -15,6 +15,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TMP_Text newWaveNumberText;
     [SerializeField] private TMP_Text newWaveEnemyCountText;
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text gameOverScoreText;
 
     [Header("Health UI")]
@@ -91,6 +92,7 @@ public class GameUI : MonoBehaviour
     void onGameOver() {
         Cursor.visible = true;
         gameOverScoreText.text = scoreText.text;
+        highScoreText.text = ScoreKeeper.highScore.ToString("D6");
         StartCoroutine(fade(Color.clear, new Color(0, 0, 0, .95f), 1));
         scoreText.gameObject.SetActive(false);
         gameOverUI.SetActive(true);
@@ -139,6 +141,13 @@ public class GameUI : MonoBehaviour
 
     public void startNewGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void resetHighScore()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+        ScoreKeeper.resetHighScore();
+        highScoreText.text = ScoreKeeper.highScore.ToString("D6");
     }
 
     public void returnToMainMenu() {

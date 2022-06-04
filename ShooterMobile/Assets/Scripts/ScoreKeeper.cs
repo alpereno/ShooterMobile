@@ -6,6 +6,7 @@ public class ScoreKeeper : MonoBehaviour
     // this event should be static
 
     public static int score { get; private set; }
+    public static int highScore { get; private set; }
     float lastEnemyKilledTime;
     int streakCount;
     float streakTime = .5f;
@@ -14,6 +15,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         Enemy.onDeathStatic += onEnemyDeath;
         FindObjectOfType<Player>().onDeath += onPlayerDeath;
+        highScore = PlayerPrefs.GetInt("HighScore");
     }
 
     void onEnemyDeath() {
@@ -26,11 +28,22 @@ public class ScoreKeeper : MonoBehaviour
         lastEnemyKilledTime = Time.time;
 
         score += 4 + (int)Mathf.Pow(3, streakCount);
+
+        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+        }
     }
 
     // when the player dies, onEnemyDeath subscribeing twice because it was static event
     void onPlayerDeath() {
         Enemy.onDeathStatic -= onEnemyDeath;
         score = 0;
+    }
+
+    public static void resetHighScore()
+    {
+        highScore = 0;
     }
 }
