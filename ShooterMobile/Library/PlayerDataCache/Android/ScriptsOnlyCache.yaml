@@ -211,13 +211,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7356}
     - Class: 114
-      Script: {instanceID: 7756}
+      Script: {instanceID: 7754}
     - Class: 114
-      Script: {instanceID: 7810}
+      Script: {instanceID: 7808}
     - Class: 114
-      Script: {instanceID: 7910}
+      Script: {instanceID: 7908}
     - Class: 114
-      Script: {instanceID: 8134}
+      Script: {instanceID: 8132}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -378,9 +378,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7360}
     - Class: 114
-      Script: {instanceID: 7666}
+      Script: {instanceID: 7664}
     - Class: 114
-      Script: {instanceID: 7904}
+      Script: {instanceID: 7902}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -426,7 +426,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: c50d1913c55a9a1eb86d83cdc25cf33b
+      Hash: 541faa9907a50eed66b14c444ec6ac39
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameUI
@@ -1614,12 +1614,6 @@ ScriptsOnlyBuild:
     className: PaniniProjection
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Score
-  - hash:
-      serializedVersion: 2
       Hash: 726fcf7961cbb4108aa5be5e55b8c8bf
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -1736,4 +1730,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/Game.unity
-  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/rs/V1.4AlpShooter.apk"
+  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/rs/V1.5AlpShooter.apk"
