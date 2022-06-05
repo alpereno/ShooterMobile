@@ -29,7 +29,7 @@ public class ScoreKeeper : MonoBehaviour
 
         score += 4 + (int)Mathf.Pow(3, streakCount);
 
-        if (score > PlayerPrefs.GetInt("HighScore", 0))
+        if (score > highScore)
         {
             highScore = score;
             PlayerPrefs.SetInt("HighScore", highScore);
@@ -44,6 +44,7 @@ public class ScoreKeeper : MonoBehaviour
 
     public static void resetHighScore()
     {
+        PlayerPrefs.DeleteKey("HighScore");
         highScore = 0;
     }
 }

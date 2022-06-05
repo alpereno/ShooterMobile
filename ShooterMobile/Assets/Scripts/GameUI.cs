@@ -145,7 +145,6 @@ public class GameUI : MonoBehaviour
 
     public void resetHighScore()
     {
-        PlayerPrefs.DeleteKey("HighScore");
         ScoreKeeper.resetHighScore();
         highScoreText.text = ScoreKeeper.highScore.ToString("D6");
     }
