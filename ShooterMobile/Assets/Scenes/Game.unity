@@ -2235,31 +2235,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: newRoom
       objectReference: {fileID: 0}
-    - target: {fileID: 4962341930816326994, guid: 66bae83876464b249b88ba29681516a0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 575
-      objectReference: {fileID: 0}
-    - target: {fileID: 7304661825154488224, guid: 66bae83876464b249b88ba29681516a0,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 7304661825154488224, guid: 66bae83876464b249b88ba29681516a0,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 7304661825154488224, guid: 66bae83876464b249b88ba29681516a0,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 7304661825154488224, guid: 66bae83876464b249b88ba29681516a0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.298641
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66bae83876464b249b88ba29681516a0, type: 3}
 --- !u!1 &963194225
