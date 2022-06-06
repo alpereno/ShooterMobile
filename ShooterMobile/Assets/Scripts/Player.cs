@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent (typeof (GunController))]
 public class Player : LivingEntity
 {
+    public bool disabled;
     PlayerController playerController;
     GunController gunController;
     [SerializeField] private float walkSpeed = 4f;
@@ -41,51 +42,51 @@ public class Player : LivingEntity
         //gunController.equipWeapon(gunIndex)...    waveNumber maybe
     }
 
-    private void weaponInput()
-    {
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    gunController.reload();
-        //}
-        createAimRay();
-    }
+    //private void weaponInput()
+    //{
+    //    //if (Input.GetKeyDown(KeyCode.R))
+    //    //{
+    //    //    gunController.reload();
+    //    //}
+    //    //createAimRay();
+    //}
 
-    private void createAimRay()
-    {
-        //      OLD VERSION
-        //      In the old version Crosshair Point was based on where it was touched
-        //      but now based on player's forward
+    //private void createAimRay()
+    //{
+    //    //      OLD VERSION
+    //    //      In the old version Crosshair Point was based on where it was touched
+    //    //      but now based on player's forward
 
-        //    Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
-        //    Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        //    float distance;
-        //    if (groundPlane.Raycast(ray, out distance))
-        //    {
-        //        bool targetDetected;
-        //        Vector3 point = ray.GetPoint(distance);
-        //        playerController.lookAt(point);
-        //        //Debug.DrawLine(ray.origin, point, Color.red);
+    //    //    Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
+    //    //    Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+    //    //    float distance;
+    //    //    if (groundPlane.Raycast(ray, out distance))
+    //    //    {
+    //    //        bool targetDetected;
+    //    //        Vector3 point = ray.GetPoint(distance);
+    //    //        playerController.lookAt(point);
+    //    //        //Debug.DrawLine(ray.origin, point, Color.red);
 
-        //        // I've added weaponheight to y axis cause crosshair should be same height 
-        //        Vector3 crosshairPoint = new Vector3(point.x, point.y + gunController.getWeaponHeight / 2, point.z);
-        //        crosshair.transform.position = crosshairPoint;
-        //        targetDetected = crosshair.detectTarget(ray, distance);
-        //        if (targetDetected)
-        //        {
-        //            gunController.shoot();
-        //        }
-        //        // when distance between lookpoint and player's pos. is less than [1- 1.2] gun(s) behaveing weirdly
-        //        // so if the distance greater than 1.1, aim that point   (1.1 * 1.1 = 1.21)
-        //        //print((new Vector2(crosshairPoint.x, crosshairPoint.z) - new Vector2(transform.position.x, transform.position.z)).magnitude);
-        //        if ((new Vector2(crosshairPoint.x, crosshairPoint.z) - new Vector2(transform.position.x, transform.position.z)).sqrMagnitude > 1.21)
-        //        {
-        //            gunController.aim(crosshairPoint);
-        //        }
-        //    }
-        //}
-        //if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
-        //{}
-    }
+    //    //        // I've added weaponheight to y axis cause crosshair should be same height 
+    //    //        Vector3 crosshairPoint = new Vector3(point.x, point.y + gunController.getWeaponHeight / 2, point.z);
+    //    //        crosshair.transform.position = crosshairPoint;
+    //    //        targetDetected = crosshair.detectTarget(ray, distance);
+    //    //        if (targetDetected)
+    //    //        {
+    //    //            gunController.shoot();
+    //    //        }
+    //    //        // when distance between lookpoint and player's pos. is less than [1- 1.2] gun(s) behaveing weirdly
+    //    //        // so if the distance greater than 1.1, aim that point   (1.1 * 1.1 = 1.21)
+    //    //        //print((new Vector2(crosshairPoint.x, crosshairPoint.z) - new Vector2(transform.position.x, transform.position.z)).magnitude);
+    //    //        if ((new Vector2(crosshairPoint.x, crosshairPoint.z) - new Vector2(transform.position.x, transform.position.z)).sqrMagnitude > 1.21)
+    //    //        {
+    //    //            gunController.aim(crosshairPoint);
+    //    //        }
+    //    //    }
+    //    //}
+    //    //if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+    //    //{}
+    //}
 
     private void moveInput()
     {
@@ -108,6 +109,11 @@ public class Player : LivingEntity
         else moveVelocity *= walkSpeed;
         //FPS game move direction (relative to local coordinate system)
         //moveVelocity = transform.TransformDirection(moveVelocity);
+
+        if (disabled)
+        {
+            moveVelocity = Vector3.zero;
+        }
         playerController.setVelocity(moveVelocity);
         animating(moveInput.x, moveInput.z);
     }
