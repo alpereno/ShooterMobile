@@ -1739,4 +1739,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/Game.unity
-  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/rs/TP_V1.6AlpShooter.apk"
+  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/RS_apkFiles/V1.6AlpShooter.apk"
