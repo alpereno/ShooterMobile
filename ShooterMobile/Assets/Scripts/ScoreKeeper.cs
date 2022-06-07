@@ -5,10 +5,12 @@ public class ScoreKeeper : MonoBehaviour
     // we have to notifying when the player kills an enemy, we can use onDeath event
     // this event should be static
 
+    public event System.Action onStreak;
+
     public static int score { get; private set; }
     public static int highScore { get; private set; }
     float lastEnemyKilledTime;
-    int streakCount;
+    public static int streakCount { get; private set; }
     float streakTime = .5f;
 
     private void Start()
@@ -26,6 +28,11 @@ public class ScoreKeeper : MonoBehaviour
             streakCount = 0;
         }
         lastEnemyKilledTime = Time.time;
+        
+        if (onStreak != null)
+        {
+            onStreak();
+        }
 
         score += 4 + (int)Mathf.Pow(3, streakCount);
 

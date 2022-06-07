@@ -429,7 +429,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 541faa9907a50eed66b14c444ec6ac39
+      Hash: 3237586d1d672bd171ce11607c153e24
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameUI
@@ -1739,4 +1739,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/Game.unity
-  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/RS_apkFiles/V1.6AlpShooter.apk"
+  playerPath: "C:/Users/alper/OneDrive/Masa\xFCst\xFC/RS_apkFiles/V1.8AlpShooter.apk"

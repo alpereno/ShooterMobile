@@ -10,14 +10,7 @@ public class GunController : MonoBehaviour
     {
         get { return weaponHold.position.y; }
     }
-    public Vector3 getWeaponForward
-    {
-        get { return weaponHold.forward; }
-    }
-    public Vector3 getWeaponHoldPos
-    {
-        get { return weaponHold.position; }
-    }
+
     public int getRemainingBullets
     {
         get { return equippedGun.bulletsRemainingInMagazine; }

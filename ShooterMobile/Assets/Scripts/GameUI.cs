@@ -17,6 +17,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text gameOverScoreText;
+    [SerializeField] private TMP_Text streakText;
 
     [Header("Health UI")]
     [SerializeField] Slider healthSlider;
@@ -34,6 +35,7 @@ public class GameUI : MonoBehaviour
     float screenHeight;
     float bannerTopPos;
     float bannerBotPos;
+    IEnumerator currentStreakcoroutine;
 
     private void Awake()
     {
@@ -41,11 +43,13 @@ public class GameUI : MonoBehaviour
         spawner.onNewWave += onNewWave;
         player = FindObjectOfType<Player>();
         gunController = player.GetComponent<GunController>();
+        FindObjectOfType<ScoreKeeper>().onStreak += onStreak;
+        streakText.alpha = 0;
     }
 
     private void Start()
     {
-        player.onDeath += onGameOver;
+        player.onDeath += onGameOver;        
         screenHeight = Screen.height;
         //print(screenHeight);
         //bannerBotPos = screenHeight - (screenHeight * 5 / 3);
@@ -98,6 +102,17 @@ public class GameUI : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
+    void onStreak() {
+
+        if (currentStreakcoroutine != null)
+        {
+            StopCoroutine(currentStreakcoroutine);
+        }
+
+        currentStreakcoroutine = animateStreakPoint();
+        StartCoroutine(currentStreakcoroutine);        
+    }
+
     void setHealthUI(float health) {
         healthSlider.value = health;
         fillImage.color = Color.Lerp(zeroHealthColor, fullHealthColor, health / player.startingHealth);
@@ -117,7 +132,7 @@ public class GameUI : MonoBehaviour
 
     IEnumerator animateBanner() {
         //Banner will go down firstly then go back to up
-        float delayTime = 1.5f;
+        float delayTime = 2f;
         float speed = 3f;
         float animatePercent = 0;
         float endDelayTime = Time.time + 1 / speed + delayTime;
@@ -137,6 +152,14 @@ public class GameUI : MonoBehaviour
             newWaveBanner.anchoredPosition = Vector2.up * Mathf.Lerp(bannerTopPos, bannerBotPos, animatePercent);
             yield return null;
         }
+    }
+
+    IEnumerator animateStreakPoint()
+    {
+        streakText.alpha = 1;
+        streakText.text = "Streak! X" + Mathf.Pow(3, ScoreKeeper.streakCount);
+        yield return new WaitForSeconds(.5f);
+        streakText.alpha = 0;
     }
 
     public void startNewGame() {

@@ -106,7 +106,7 @@ public class Gun : MonoBehaviour
     public void reload(){
         if (!reloading && bulletsRemainingInMagazine != bulletsPerMagazine)
         {
-            AudioManager.instance.playAudio(reloadAudioClip, transform.position, .6f);
+            AudioManager.instance.playAudio(reloadAudioClip, transform.position, .65f);
             StartCoroutine(animateReload());
         }
     }
