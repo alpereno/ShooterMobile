@@ -34,4 +34,5 @@ Features that can be added to the game in the future
 - Gun variety
 - Extra abilities such as freezing the enemies, grenades, unlimited ammo for short duration etc.
 ..
+
 	Maybe I'll working on them one day. Who knows
