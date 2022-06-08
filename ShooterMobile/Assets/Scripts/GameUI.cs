@@ -72,10 +72,10 @@ public class GameUI : MonoBehaviour
     }
 
     void onNewWave(int waveNumber) {
-        string[] numbers = { "One", "Two", "Three", "Four", "Five", "Six", "Seven"};
-        newWaveNumberText.text = "--Wave " + numbers[waveNumber - 1] + "--";
-        string enemyCount = spawner.waves[waveNumber - 1].infinite ? "Infinite" : spawner.waves[waveNumber - 1].enemyCount + "";
-        newWaveEnemyCountText.text = "Enemies: " + enemyCount;
+        string[] numbers = { "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN"};
+        newWaveNumberText.text = "--WAVE " + numbers[waveNumber - 1] + "--";
+        string enemyCount = spawner.waves[waveNumber - 1].infinite ? "INFINITE" : spawner.waves[waveNumber - 1].enemyCount + "";
+        newWaveEnemyCountText.text = "ENEMIES: " + enemyCount;
 
         StopCoroutine("animateBanner");
         StartCoroutine(animateBanner());
