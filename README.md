@@ -13,20 +13,20 @@ General features of the game
 - Muzzle flash, laser, magazine, shell, death effect, recoil and reload system
 - Spawner system with adjustable characteristics such as health, attack power, number, color, etc.
 - Randomly different audio system for each in situations such as attack, death etc.
-- watch out, don't fall down!
+- Watch out, don't fall down!
 
 In code
-- object orianted based 
-- object pooling
-- event based communication system
-- most animations and visual effects are made with coroutines (gun recoil and reload, enemy attacks, UI interactions etc.)
-- high score and combo streak system
-- post processing
-- player prefs
-- animation system
-- audio system
-- spawn system
-- own utility class for optimization
+- Object orianted based 
+- Object pooling
+- Event based communication system
+- Most animations and visual effects are made with coroutines (gun recoil and reload, enemy attacks, UI interactions etc.)
+- High score and combo streak system
+- Post processing
+- Player prefs
+- Animation system
+- Audio system
+- Spawn system
+- Own utility class for optimization
 
 Features that can be added to the game in the future
 - Different maps
