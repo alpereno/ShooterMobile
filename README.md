@@ -1,5 +1,6 @@
 # ShooterMobile
 (There are exe and apk files to play in windowsBuild and andoridBuild files in the repository.)
+Here there is a video of the gameplay : https://www.youtube.com/watch?v=EIkL-GFh1yY
 
 This is a survival shooter game. A game which is you will try to survive as long as possible, 
 and you can get extra points with the combo system while killing the enemies.
